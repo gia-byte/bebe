@@ -1,0 +1,18 @@
+cars_waiting = 0
+
+cars_arriving = [8, 12, 20, 5]
+cars_pass_per_green = 5
+
+for second, arriving in enumerate(cars_arriving, start=1):
+
+    cars_waiting += arriving
+
+    cars_passing = min(cars_waiting, cars_pass_per_green)
+
+    cars_waiting -= cars_passing
+
+    print(f"Second {second}")
+    print(f"Cars arrived : {arriving}")
+    print(f"Cars passed  : {cars_passing}")
+    print(f"Still waiting: {cars_waiting}")
+    print("-" * 30)
